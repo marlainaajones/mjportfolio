@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlaina Jones - Strategic Communications Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .header .tagline {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1em;
+        }
+
+        .nav {
+            background: #34495e;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav li {
+            margin: 0;
+        }
+
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav a:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        .nav a:hover::before {
+            left: 100%;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .section {
+            padding: 80px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .metric-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-study {
+            background: white;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71);
+        }
+
+        .case-study h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .case-study-text {
+            line-height: 1.8;
+        }
+
+        .case-study-results {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+
+        .case-study-results h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .case-study-results ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .case-study-results li {
+            padding: 8px 0;
+            border-bottom: 1px solid #bdc3c7;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .case-study-results li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8em;
+        }
+
+        .education-item {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .education-item h4 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .education-item .degree {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .education-item .status {
+            color: #27ae60;
+            font-weight: bold;
+            background: #d5f4e6;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .philosophy-quote {
+            font-size: 1.3em;
+            font-style: italic;
+            text-align: center;
+            color: #7f8c8d;
+            margin: 40px 0;
+            padding: 30px;
+            background: #ecf0f1;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .case-study-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 40px 20px;
+            }
+            
+            .nav a {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Marlaina A. Jones</h1>
+                <p class="subtitle">Strategic Communications Leader</p>
+                <p class="tagline">Transforming organizational communication through strategic innovation and data-driven results</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>Location:</span>
+                        <span>Atlanta, GA</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Phone:</span>
+                        <span>(678) 337-0767</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Email:</span>
+                        <span>marlainaajones@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>LinkedIn:</span>
+                        <a href="https://www.linkedin.com/in/marlaina-jones/" target="_blank" style="color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#vision">Vision</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="leadership" class="section">
+                <h2>Leadership Philosophy</h2>
+                <div class="philosophy-quote">
+                    "What motivates me is the power internal communications has to improve the organizational environment and the experiences of employees dedicated to advancing the organization's goals."
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">30K+</div>
+                        <div class="metric-label">Employees Reached</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">45%</div>
+                        <div class="metric-label">Cost Reduction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">6x</div>
+                        <div class="metric-label">Team Growth</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">100%</div>
+                        <div class="metric-label">Platform Adoption</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.2em; text-align: center; margin-top: 40px; color: #7f8c8d;">
+                    As HR Communications Supervisor at Northside Hospital, I've transformed a single-contributor function into a strategic team of six professionals plus 10 external consultants, achieving a 45% reduction in contractor fees while expanding our capabilities to serve 30,000+ employees across the hospital system.
+                </p>
+            </section>
+
+            <section id="achievements" class="section">
+                <h2>Key Achievements</h2>
+                
+                <div class="case-study">
+                    <h3>Cost Optimization Excellence</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p>Successfully reduced contractor fees by 45% in FY24, achieving savings of $267,938 while simultaneously expanding team capabilities and improving service delivery.</p>
+                            <p><strong>Strategic Approach:</strong> Built an agile in-house team that could handle increasingly complex projects internally, reducing dependence on external contractors while maintaining quality standards.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Results Achieved:</h4>
+                            <ul>
+                                <li>Reduced contractor fees from $593,339.71 to $325,401.72</li>
+                                <li>Expanded team from 1 to 6 in-house professionals</li>
+                                <li>Maintained high-quality deliverables across all projects</li>
+                                <li>Improved cost-effectiveness for future initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>Team Leadership Excellence</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p>Manage and develop a team of senior-level communication professionals while leading 10 external communication contractors, ensuring consistent messaging and alignment with organizational objectives.</p>
+                            <p><strong>Management Philosophy:</strong> Foster collaboration, maintain high standards, and ensure seamless integration between in-house and external team members.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Leadership Impact:</h4>
+                            <ul>
+                                <li>Built high-performing team of 6 in-house professionals</li>
+                                <li>Manage 10 external communication contractors</li>
+                                <li>Ensure consistent messaging across all deliverables</li>
+                                <li>Maintain alignment with organizational objectives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>Strategic Partnership Building</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p>Collaborate with over 15 benefit vendors and their marketing teams to align benefit communications with internal strategies, creating a cohesive communication ecosystem.</p>
+                            <p><strong>Partnership Strategy:</strong> Build and maintain strategic relationships across the hospital system, enabling effective dissemination of critical information to employees at all levels.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Partnership Results:</h4>
+                            <ul>
+                                <li>Established relationships with 15+ benefit vendors</li>
+                                <li>Created unified communication strategies</li>
+                                <li>Improved information flow across all levels</li>
+                                <li>Enhanced employee experience through coordination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="case-studies" class="section">
+                <h2>Strategic Case Studies</h2>
+                
+                <div class="case-study">
+                    <h3>"You Belong at Northside" DEI Initiative</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p><strong>Challenge:</strong> DEI efforts were siloed by hospital campus and not connected to the broader hospital system strategy.</p>
+                            <p><strong>Strategy:</strong> Led the development of the comprehensive messaging framework including branding, messaging strategy, subsite development, and employee story videos. Ensured foundational messaging was adapted across multiple internal channels.</p>
+                            <p><strong>Innovation:</strong> Transformed isolated campus events into system-wide engagement opportunities, creating sustainable framework for ongoing DEI communications.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Measurable Impact:</h4>
+                            <ul>
+                                <li>Created foundational messaging adopted across multiple initiatives</li>
+                                <li>Launched system-wide events: Brewing Up Belonging, MLK recognition</li>
+                                <li>Integrated messaging into Inclusive Leadership Training</li>
+                                <li>Developed Performance Coaching Playbook with You Belong principles</li>
+                                <li>Revamped Service Awards Program with unified messaging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>I-9 Compliance Crisis Communication</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p><strong>Challenge:</strong> Reverify I-9 forms for 14,500 employees in just 2.5 months to meet COVID compliance requirements by August 30 deadline.</p>
+                            <p><strong>Strategy:</strong> Developed multi-channel communication campaign with constant touchpoints including email communications, training, text alerts, portal communications, and manager resources.</p>
+                            <p><strong>Execution:</strong> Created comprehensive communication timeline ensuring consistent messaging across all channels while managing time-sensitive compliance requirements.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Crisis Management Success:</h4>
+                            <ul>
+                                <li>Achieved 100% compliance by August 30 deadline</li>
+                                <li>Reached 14,500 employees with clear instructions</li>
+                                <li>Implemented multi-channel crisis communication strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>Benefit Connect Platform Launch</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p><strong>Challenge:</strong> Launch new benefits enrollment platform requiring 100% employee adoption during enrollment period.</p>
+                            <p><strong>Strategy:</strong> Strategically timed introduction of new tool with upcoming enrollment period, developing comprehensive communication plan to ensure awareness and adoption.</p>
+                            <p><strong>Innovation:</strong> Created seamless transition strategy that improved user experience while ensuring complete organizational adoption.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Implementation Excellence:</h4>
+                            <ul>
+                                <li>Achieved 100% employee adoption within the open enrollment window</li>
+                                <li>Successfully managed technical challenges with clear messaging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Core Competencies</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Strategic Leadership</h4>
+                        <ul class="skill-list">
+                            <li>Strategic Planning & Execution</li>
+                            <li>Change Management</li>
+                            <li>Team Leadership & Development</li>
+                            <li>Budget Optimization</li>
+                            <li>Stakeholder Management</li>
+                            <li>Cross-functional Collaboration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Communication Excellence</h4>
+                        <ul class="skill-list">
+                            <li>Internal Communications Strategy</li>
+                            <li>Multi-channel Messaging</li>
+                            <li>Employee Engagement</li>
+                            <li>Crisis Communication</li>
+                            <li>Brand Standards Management</li>
+                            <li>Multimedia Content Creation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Technology Platforms</h4>
+                        <ul class="skill-list">
+                            <li>Poppulo, Hootsuite, Mailchimp</li>
+                            <li>Airtable, Asana, Monday.com</li>
+                            <li>Adobe Creative Suite</li>
+                            <li>SharePoint, WordPress</li>
+                            <li>QuestionPro, WTW Engage</li>
+                            <li>Canva, Renderforest</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Analytics & Measurement</h4>
+                        <ul class="skill-list">
+                            <li>Data-Driven Communication Strategies</li>
+                            <li>KPI Development & Tracking</li>
+                            <li>Engagement Analytics</li>
+                            <li>ROI Measurement</li>
+                            <li>Survey Design & Analysis</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Professional Development</h2>
+                
+                <div class="education-item">
+                    <h4>Doctor of Philosophy, Strategic Communications</h4>
+                    <div class="degree">Liberty University – Lynchburg, VA</div>
+                    <div class="status">In Progress</div>
+                </div>
+                
+                <div class="education-item">
+                    <h4>Master of Arts, Integrated Global Communications</h4>
+                    <div class="degree">Kennesaw State University – Kennesaw, GA</div>
+                    <div class="status">December 2017</div>
+                </div>
+                
+                <div class="education-item">
+                    <h4>Bachelor of Fine Arts, Mass Media</h4>
+                    <div class="degree">Valdosta State University – Valdosta, GA</div>
+                    <div class="status">May 2016</div>
+                </div>
+                
+                <div class="education-item">
+                    <h4>Professional Certifications</h4>
+                    <div class="degree">Diversity, Equity, and Inclusion in HR - Cornell University</div>
+                    <div class="degree">Hootsuite Platform Certification - Hootsuite Academy</div>
+                    <div class="status">Completed</div>
+                </div>
+            </section>
+
+            <section id="vision" class="section">
+                <h2>Future Vision</h2>
+                
+                <div class="philosophy-quote">
+                    "I am extremely passionate about communications and dedicated to continuously growing my knowledge and skill in the field. My goal is always to help my organization improve communication by making a lasting impact through partnership, service and commitment to the collective vision."
+                </div>
+                
+                <div class="case-study">
+                    <h3>Management Philosophy</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-text">
+                            <p><strong>Leadership Approach:</strong> Building high-performing communication teams through strategic thinking, continuous learning, and collaborative problem-solving.</p>
+                            <p><strong>Core Strengths:</strong> Making complex information simple through collaboration with subject matter experts, maintaining a lifelong learning mindset, and meeting organizations where they are in their internal communications journey.</p>
+                            <p><strong>Strategic Focus:</strong> Developing resilient, flexible, and creative approaches to ensure messaging continues to resonate with target audiences while increasing engagement through innovative storytelling.</p>
+                        </div>
+                        <div class="case-study-results">
+                            <h4>Management Goals:</h4>
+                            <ul>
+                                <li>Lead strategic internal communications initiatives</li>
+                                <li>Build and develop high-performing teams</li>
+                                <li>Drive organizational change through effective communication</li>
+                                <li>Optimize employee experience and engagement</li>
+                                <li>Establish measurement frameworks for continuous improvement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(52, 73, 94, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = '#34495e';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate metric cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.metric-card, .case-study, .skill-category, .education-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // CSS for fadeInUp animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
